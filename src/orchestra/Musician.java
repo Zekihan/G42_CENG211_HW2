@@ -1,5 +1,5 @@
 package orchestra;
 
-public abstract class Musician {
+public interface Musician {
 
 }
