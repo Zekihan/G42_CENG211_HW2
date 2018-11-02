@@ -16,7 +16,6 @@ public class Piece {
 	}
 
 
-	private 
 	private ArrayList<String> getMusicScores(String[] part) {
 		ArrayList<String> musicScores = new ArrayList<>();
 		for (String string : part) {
@@ -25,11 +24,11 @@ public class Piece {
 		return musicScores;
 	}
 	private ArrayList<Double> getBeats(String[] part) {
-		ArrayList<Double> musicScores = new ArrayList<>();
+		ArrayList<Double> beats = new ArrayList<>();
 		for (String string : part) {
-			musicScores.add(Double.parseDouble(string.substring(1)));
+			beats.add(Double.parseDouble(string.substring(1)));
 		}
-		return musicScores;
+		return beats;
 	}
 	
 	
