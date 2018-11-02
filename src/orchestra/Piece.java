@@ -4,14 +4,26 @@ import java.util.ArrayList;
 
 public class Piece {
 
-	private ArrayList<String> a;
-	private String[][] piece;
+	
+	private Score[][] piece;
 
 	public Piece(String[][] piece) {
-		this.piece = piece;
+		
+		this.piece = new Score[piece.length][piece[0].length];
+	
+		for (int i = 0; i<piece.length; i++) {
+			ArrayList<String> scoreList = getMusicScores(piece[i]);
+			ArrayList<Double> beatList = getBeats(piece[i]);
+			
+			for (int j = 0; j<piece[i].length; j++) {
+				
+				Score score = new Score(beatList.get(j),scoreList.get(j));
+				this.piece[i][j] = score;
+			}
+		}
 	}
 
-	public String[][] getPiece() {
+	public Score[][] getPiece() {
 		return piece;
 	}
 
