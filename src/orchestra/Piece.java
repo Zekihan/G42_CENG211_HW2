@@ -5,25 +5,25 @@ import java.util.ArrayList;
 public class Piece {
 
 	
-	private Score[][] piece;
+	private Part[] piece;
 
 	public Piece(String[][] piece) {
 		
-		this.piece = new Score[piece.length][piece[0].length];
+		this.piece = new Part[piece.length];
 	
 		for (int i = 0; i<piece.length; i++) {
 			ArrayList<String> scoreList = getMusicScores(piece[i]);
 			ArrayList<Double> beatList = getBeats(piece[i]);
-			
+			Score[] part = new Score[piece[i].length];
 			for (int j = 0; j<piece[i].length; j++) {
-				
 				Score score = new Score(beatList.get(j),scoreList.get(j));
-				this.piece[i][j] = score;
+				part[j] = score;
 			}
+			this.piece[i] = new Part(part);
 		}
 	}
 
-	public Score[][] getPiece() {
+	public Part[] getPiece() {
 		return piece;
 	}
 

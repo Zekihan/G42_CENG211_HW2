@@ -25,6 +25,13 @@ public class Score {
 	public void setType(String type) {
 		this.type = type;
 	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Score [beat=").append(beat).append(", type=").append(type).append("]");
+		return builder.toString();
+	}
 	
 	
 	
