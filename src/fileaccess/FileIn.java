@@ -9,14 +9,13 @@ import java.util.StringTokenizer;
 
 public class FileIn {
 
-	private String fileName;
 	
-	public FileIn(String fileName) {
-		this.fileName = fileName;
+	public FileIn() {
+		
 	}
 	
-	public String[][] readPiece() {
-		
+	public String[][] readPiece(String fileName) {
+
 		ArrayList<String[]> partList = new ArrayList<String[]>();
 		boolean done = false;
 		try {

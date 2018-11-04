@@ -22,10 +22,18 @@ public class Piece {
 			this.piece[i] = new Part(part);
 		}
 	}
-
 	public Part[] getPiece() {
 		return piece;
 	}
+	
+	public Part getPart(int i) {
+		return piece[i];
+	}
+	
+	public int getSize() {
+		return piece.length;
+	}
+	
 
 
 	private ArrayList<String> getMusicScores(String[] part) {
