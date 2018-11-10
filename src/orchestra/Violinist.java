@@ -14,13 +14,17 @@ public class Violinist extends StringInstrumentMusician{
 	public void playPiece(Piece piece) {
 		super.playPiece(piece);
 		shouldPlay = super.getPlayed();
-		for (Part part : shouldPlay) {
-			String tempo =	"";
+		String print = "Part ";
+		for (int i = 0; i<shouldPlay.length; i++ ) {
+			Part part = shouldPlay[i];
+			print += i+":";
+			String tempo =	part.getTempo();
 			if (!(tempo.equals("Prestissimo"))) {
 				for (Score score : part.getPart()) {
-					
+					print += score.getType();
 				}
 			}
+			print += "/n";
 		}
 		
 		

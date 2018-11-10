@@ -12,10 +12,14 @@ public class Celloist extends StringInstrumentMusician{
 	public void playPiece(Piece piece) {
 		super.playPiece(piece);
 		shouldPlay = super.getPlayed();
-		for (Part part : shouldPlay) {
+		String print = "Part ";
+		for (int i = 0; i<shouldPlay.length; i++ ) {
+			Part part = shouldPlay[i];
+			print += i+":";
 			for (Score score : part.getPart()) {
-				
+				print += score.getType();
 			}
+			print += "/n";
 		}
 		
 	}
