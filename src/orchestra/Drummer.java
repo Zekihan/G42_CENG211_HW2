@@ -2,9 +2,10 @@ package orchestra;
 
 public class Drummer extends PercussionInstrumentMusicians{
 
-	Part[] shouldPlay;
+	private Part[] shouldPlay;
 	
 	public Drummer() {
+		super();
 	}
 
 	@Override

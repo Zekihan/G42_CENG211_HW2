@@ -2,9 +2,9 @@ package orchestra;
 
 public class PercussionInstrumentMusicians implements Musician{
 
-	private Part[] played = new Part[2];
+	private Part[] played;
 	public PercussionInstrumentMusicians() {
-		
+		this.played = new Part[2];
 	}
 
 
