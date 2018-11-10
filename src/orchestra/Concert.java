@@ -39,6 +39,7 @@ public class Concert {
 			
 			System.out.println(musician.playPiece(piece));
 		}
+		System.out.println(System.lineSeparator());
 		
 	}
 	

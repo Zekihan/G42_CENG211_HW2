@@ -12,7 +12,6 @@ public class Flutist extends WoodwindInstrumentMusician{
 		super.playPiece(piece);
 		Integer[] indexOfPlay= super.getPlayed();
 		String print = "";
-		System.out.println(indexOfPlay.length);
 		for (int i = 0; i<indexOfPlay.length; i++ ) {
 			Part part = piece.getPart(indexOfPlay[i]);
 			String tempo = part.getTempo();
