@@ -32,12 +32,13 @@ public class Concert {
 		Piece piece = createPiece(pieceInput.readPiece(fileName));
 		String pieceId = fileName.substring(5,fileName.length()-4);
 		System.out.println("Piece " + pieceId + " is played " + piece.getTempoChange());
-		for (Musician musician: musicians) {	
-			
-			System.out.println(musician.playPiece(piece));
-		}
-		System.out.println(System.lineSeparator());
 		
+		for (Musician musician: musicians) {	
+			if(!musician.playPiece(piece).equals("")) {
+				System.out.println(musician.playPiece(piece));
+			}
+		}
+		System.out.println("--------------------------------------------------------------");
 	}
 	
 	private Piece createPiece(String[][] piece2dArr) {
