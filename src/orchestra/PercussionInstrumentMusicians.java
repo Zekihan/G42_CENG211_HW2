@@ -2,16 +2,25 @@ package orchestra;
 
 public class PercussionInstrumentMusicians implements Musician{
 
-	@Override
-	public Part[] playPiece(Piece piece) {
+	private Part[] played = new Part[2];
+	public PercussionInstrumentMusicians() {
 		
+	}
+
+
+
+	@Override
+	public void playPiece(Piece piece) {
 		int size = piece.getSize();
 		Part lastSecond = piece.getPart((size-1));
 		Part lastFirst = piece.getPart(size);
-		Part[] p = new Part[1];
-		p[0] = lastSecond;
-		p[1] = lastFirst;
-		return p;
+		played[0] = lastSecond;
+		played[1] = lastFirst;
 	}
+
+	public Part[] getPlayed() {
+		return played;
+	}
+	
 
 }
