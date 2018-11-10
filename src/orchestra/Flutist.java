@@ -2,7 +2,6 @@ package orchestra;
 
 public class Flutist extends WoodwindInstrumentMusician{
 
-	private Part[] shouldPlay;
 	
 	public Flutist() {
 		super();
@@ -11,12 +10,13 @@ public class Flutist extends WoodwindInstrumentMusician{
 	@Override
 	public String playPiece(Piece piece) {
 		super.playPiece(piece);
-		shouldPlay = super.getPlayed();
+		Integer[] indexOfPlay= super.getPlayed();
 		String print = "";
-		for (int i = 0; i<shouldPlay.length; i++ ) {
-			Part part = shouldPlay[i];
+		System.out.println(indexOfPlay.length);
+		for (int i = 0; i<indexOfPlay.length; i++ ) {
+			Part part = piece.getPart(indexOfPlay[i]);
 			String tempo = part.getTempo();
-			print +="Part " + (i+1) +":";
+			print +="Part " + (indexOfPlay[i] + 1) +":";
 			for (Score score : part.getPart()) {
 				print += " " + score.getType();
 			}

@@ -1,35 +1,32 @@
 package orchestra;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
+import java.util.HashSet;
 import java.util.Set;
 
 public class WoodwindInstrumentMusician implements Musician{
 
-	private Part[] played;
+	private Integer[] played;
 	
 	public WoodwindInstrumentMusician() {
-		this.played = new Part[2];
+		this.played = new Integer[2];
 	}
 
 	@Override
 	public String playPiece(Piece piece) {
-		ArrayList<Part> play = new ArrayList<>();
+		Set<Integer> set = new HashSet<>();
 		for (int i = 0; i<piece.getSize(); i++) {
-			for (int j = (i+1); j<piece.getSize(); j++ ) {
-				System.out.println(j);
+			for (int j = 0; j<piece.getSize(); j++ ) {
 				Part part = piece.getPart(j);
-				if(part.equals(piece.getPart(i))) {
-					play.add(part);
+				if((i!=j)&&(part.equals(piece.getPart(i)))) {
+					set.add(i);
 				}
 			}
 		}
-		played = play.toArray(new Part[play.size()]);
+		played = set.toArray(new Integer[set.size()]);
 		return null;
 	}
 
-	public Part[] getPlayed() {
+	public Integer[] getPlayed() {
 		return played;
 	}
 }
