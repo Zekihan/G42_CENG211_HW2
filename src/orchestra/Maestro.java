@@ -38,7 +38,7 @@ public class Maestro {
 		for(int i=0; i<piece.getSize(); i++) {
 			Part part = piece.getPart(i);
 			for(int j=0; j<part.getSize(); j++) {
-				 beatsCount += part.getScore(i).getBeat();
+				 beatsCount += part.getScore(j).getBeat();
 			}
 		}
 		if(beatsCount < 83) {
@@ -50,7 +50,8 @@ public class Maestro {
 		}else if(132 <= beatsCount && beatsCount < 152) {
 			return "Accelerando";
 		}else {
-			System.out.println("INVALID TEMPO");
+			
+			System.out.println("INVALID TEMPO" + beatsCount);
 			return null;
 		}
 			
