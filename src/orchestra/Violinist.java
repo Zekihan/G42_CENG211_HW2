@@ -26,9 +26,11 @@ public class Violinist extends StringInstrumentMusician{
 				}
 				print += " -- " + tempo + System.lineSeparator();
 			}
-			
 		}
-		return "Violin Playes"+System.lineSeparator()+print;
+		if(print.equals("")) {
+			return "";
+		}
+		return "Violinist Played"+System.lineSeparator()+print;
 		
 	}
 }

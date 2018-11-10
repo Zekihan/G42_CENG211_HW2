@@ -10,7 +10,6 @@ public class Concert {
 	private ArrayList<Musician> musicians;
 
 	public Concert() {
-		
 		maestro = new Maestro();
 		musicians = new ArrayList<>();
 		musicians.add(new Violinist());
@@ -19,8 +18,6 @@ public class Concert {
 		musicians.add(new Flutist());
 		musicians.add(new Drummer());
 		musicians.add(new BellPlayer());
-		
-		
 	}
 	public void Start() {	
 		play("piece1.txt");

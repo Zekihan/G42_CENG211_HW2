@@ -21,6 +21,9 @@ public class Flutist extends WoodwindInstrumentMusician{
 			}
 			print += " -- " + tempo + System.lineSeparator();
 		}
-		return "Flut Playes"+System.lineSeparator()+print;
+		if(print.equals("")) {
+			return "";
+		}
+		return "Flutist Played"+System.lineSeparator()+print;
 	}
 }

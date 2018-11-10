@@ -22,6 +22,9 @@ public class Celloist extends StringInstrumentMusician{
 			}
 			print += " -- " + tempo + System.lineSeparator();
 		}
-		return "Cello Playes"+System.lineSeparator()+print;
+		if(print.equals("")) {
+			return "";
+		}
+		return "Celloist Played"+System.lineSeparator()+print;
 	}
 }

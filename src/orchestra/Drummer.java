@@ -30,7 +30,10 @@ public class Drummer extends PercussionInstrumentMusicians{
 			}
 			
 		}
-		return "Drum Playes"+System.lineSeparator()+print;
+		if(print.equals("")) {
+			return "";
+		}
+		return "Drummer Played"+System.lineSeparator()+print;
 	}
 
 }
