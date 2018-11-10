@@ -9,8 +9,9 @@ public class StringInstrumentMusician implements Musician{
 	}
 
 	@Override
-	public void playPiece(Piece piece) {
+	public String playPiece(Piece piece) {
 		played = piece.getPiece();
+		return null;
 		
 	}
 	

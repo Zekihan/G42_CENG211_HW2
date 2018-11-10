@@ -9,7 +9,7 @@ public class Celloist extends StringInstrumentMusician{
 	}
 
 	@Override
-	public void playPiece(Piece piece) {
+	public String playPiece(Piece piece) {
 		super.playPiece(piece);
 		shouldPlay = super.getPlayed();
 		String print = "Part ";
@@ -21,6 +21,6 @@ public class Celloist extends StringInstrumentMusician{
 			}
 			print += "/n";
 		}
-		
+		return print;
 	}
 }

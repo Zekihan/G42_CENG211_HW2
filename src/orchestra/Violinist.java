@@ -11,13 +11,13 @@ public class Violinist extends StringInstrumentMusician{
 	}
 
 	@Override
-	public void playPiece(Piece piece) {
+	public String playPiece(Piece piece) {
 		super.playPiece(piece);
 		shouldPlay = super.getPlayed();
 		String print = "Part ";
 		for (int i = 0; i<shouldPlay.length; i++ ) {
 			Part part = shouldPlay[i];
-			print += i+":";
+			print += (i+1)+":";
 			String tempo =	part.getTempo();
 			if (!(tempo.equals("Prestissimo"))) {
 				for (Score score : part.getPart()) {
@@ -26,7 +26,7 @@ public class Violinist extends StringInstrumentMusician{
 			}
 			print += "/n";
 		}
-		
+		return print;
 		
 	}
 }

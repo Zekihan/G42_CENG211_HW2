@@ -9,7 +9,7 @@ public class BellPlayer extends PercussionInstrumentMusicians{
 	}
 
 	@Override
-	public void playPiece(Piece piece) {
+	public String playPiece(Piece piece) {
 		super.playPiece(piece);
 		shouldPlay = super.getPlayed();
 		String print = "Part ";
@@ -32,5 +32,6 @@ public class BellPlayer extends PercussionInstrumentMusicians{
 				print += "/n";
 			}
 		}
+		return print;
 	}
 }

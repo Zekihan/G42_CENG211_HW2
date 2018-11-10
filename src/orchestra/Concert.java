@@ -28,9 +28,9 @@ public class Concert {
 		musicians.add(new BellPlayer());
 	
 		//plays piece 1
-		//for (Musician musician: musicians) {	
-			//musician.playPiece(piece1);
-		//}
+		for (Musician musician: musicians) {	
+			System.out.println(musician.playPiece(piece1));
+		}
 	
 	}
 	

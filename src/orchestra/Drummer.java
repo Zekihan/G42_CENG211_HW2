@@ -9,7 +9,7 @@ public class Drummer extends PercussionInstrumentMusicians{
 	}
 
 	@Override
-	public void playPiece(Piece piece) {
+	public String playPiece(Piece piece) {
 		super.playPiece(piece);
 		shouldPlay = super.getPlayed();
 		String print = "Part ";
@@ -29,8 +29,7 @@ public class Drummer extends PercussionInstrumentMusicians{
 			}
 			print += "/n";
 		}
-		
-		
+		return print;
 	}
 
 }

@@ -11,7 +11,7 @@ public class WoodwindInstrumentMusician implements Musician{
 	}
 
 	@Override
-	public void playPiece(Piece piece) {
+	public String playPiece(Piece piece) {
 		ArrayList<Part> play = new ArrayList<>();
 		Part[] copy = piece.getPiece();
 		for (int i = 0; i<piece.getSize(); i++) {
@@ -24,7 +24,8 @@ public class WoodwindInstrumentMusician implements Musician{
 				}
 			}
 		}
-		played = (Part[]) play.toArray();
+		played = play.toArray(new Part[play.size()]);
+		return null;
 	}
 
 	public Part[] getPlayed() {
