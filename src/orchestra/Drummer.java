@@ -17,16 +17,16 @@ public class Drummer extends PercussionInstrumentMusicians{
 			Part part = shouldPlay[i];
 			String tempo =	part.getTempo();
 			if ((tempo.equals("Prestissimo"))||(tempo.equals("Vivace"))||(tempo.equals("Allegretto"))) {
+				print +="Part " + (piece.getSize()-2+i) +":";
 				for (Score score : part.getPart()) {
-					print +="Part " + (i+1) +":";
 					if((score.getType().equals("C"))||(score.getType().equals("D"))||(score.getType().equals("E"))) {
 						print += " " + score.getType();
 					}
 					else {
 						print += " X";
 					}
-					print += " -- " + tempo + System.lineSeparator();
 				}
+				print += " -- " + tempo + System.lineSeparator();
 			}
 			
 		}
