@@ -2,5 +2,5 @@ package orchestra;
 
 public interface Musician {
 	
-	public void playPiece(Piece piece);
+	public Part[] playPiece(Piece piece);
 }
