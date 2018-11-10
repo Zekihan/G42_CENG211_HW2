@@ -1,6 +1,7 @@
 package orchestra;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Part {
 
@@ -48,7 +49,16 @@ public class Part {
 	
 	@Override
 	public boolean equals(Object arg0) {
-		return super.equals(arg0);
+		Part other = (Part) arg0;
+		if (other == null) {
+			return false;
+		}
+		if ((this.size == other.getSize())&&(this.tempo.equals(other.getTempo()))&&(Arrays.equals(this.part, other.getPart()))) {
+		return true;
+		}
+		else {
+			return false;
+		}
 	}
 	
 	private ArrayList<String> getMusicScores(String[] part) {

@@ -1,6 +1,9 @@
 package orchestra;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.Set;
 
 public class WoodwindInstrumentMusician implements Musician{
 
@@ -13,14 +16,12 @@ public class WoodwindInstrumentMusician implements Musician{
 	@Override
 	public String playPiece(Piece piece) {
 		ArrayList<Part> play = new ArrayList<>();
-		Part[] copy = piece.getPiece();
 		for (int i = 0; i<piece.getSize(); i++) {
-			for (int j = 0; j<copy.length; j++ ) {
-				if(i!=j) {
-					Part part = copy[j];
-					if(part.equals(piece.getPart(i))) {
-						play.add(piece.getPart(i));
-					}
+			for (int j = (i+1); j<piece.getSize(); j++ ) {
+				System.out.println(j);
+				Part part = piece.getPart(j);
+				if(part.equals(piece.getPart(i))) {
+					play.add(part);
 				}
 			}
 		}
