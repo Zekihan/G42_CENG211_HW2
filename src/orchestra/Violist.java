@@ -20,17 +20,17 @@ public class Violist extends StringInstrumentMusician{
 				print += " " + score.getType();
 			}
 			String tempo = shouldPlay[0].getTempo();
-			print += "... " + tempo + System.lineSeparator();
+			print += " -- " + tempo + System.lineSeparator();
 		}
 		else {
 			for (int i = 0; i<shouldPlay.length; i++ ) {
 				Part part = shouldPlay[i];
-				print +="Part " + i+":";
+				print +="Part " + (i+1) +":";
 				String tempo = part.getTempo();
 				for (Score score : part.getPart()) {
 					print += " " + score.getType();
 				}
-				print += "... " + tempo + System.lineSeparator();
+				print += " -- " + tempo + System.lineSeparator();
 			}
 		}
 		return "Viol Playes"+ System.lineSeparator()+print;

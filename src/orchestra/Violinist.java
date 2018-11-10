@@ -17,14 +17,14 @@ public class Violinist extends StringInstrumentMusician{
 		String print = "";
 		for (int i = 0; i<shouldPlay.length; i++ ) {
 			Part part = shouldPlay[i];
-			print +="Part " + i+":";
+			print +="Part " + (i+1) +":";
 			String tempo =	part.getTempo();
 			if (!(tempo.equals("Prestissimo"))) {
 				for (Score score : part.getPart()) {
 					print += " " + score.getType();
 				}
 			}
-			print += "... " + tempo + System.lineSeparator();
+			print += " -- " + tempo + System.lineSeparator();
 		}
 		return "Violin Playes"+System.lineSeparator()+print;
 		

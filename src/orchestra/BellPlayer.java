@@ -17,7 +17,7 @@ public class BellPlayer extends PercussionInstrumentMusicians{
 		if ((tempoChange.equals("Stretto"))) {
 			for (int i = 0; i<shouldPlay.length; i++ ) {
 				Part part = shouldPlay[i];
-				print +="Part " + i+":";
+				print +="Part " + (i+1) +":";
 				String tempo = part.getTempo();
 				if ((tempo.equals("Grave"))) {
 					for (Score score : part.getPart()) {
@@ -29,7 +29,7 @@ public class BellPlayer extends PercussionInstrumentMusicians{
 						}
 					}
 				}
-				print += "... " + tempo + System.lineSeparator();
+				print += " -- " + tempo + System.lineSeparator();
 			}
 		}
 		return "Bell Playes"+System.lineSeparator()+print;

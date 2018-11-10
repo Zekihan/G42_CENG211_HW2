@@ -18,14 +18,14 @@ public class Drummer extends PercussionInstrumentMusicians{
 			String tempo =	part.getTempo();
 			if ((tempo.equals("Prestissimo"))||(tempo.equals("Vivace"))||(tempo.equals("Allegretto"))) {
 				for (Score score : part.getPart()) {
-					print +="Part " + i+":";
+					print +="Part " + (i+1) +":";
 					if((score.getType().equals("C"))||(score.getType().equals("D"))||(score.getType().equals("E"))) {
 						print += " " + score.getType();
 					}
 					else {
 						print += " X";
 					}
-					print += "... " + tempo + System.lineSeparator();
+					print += " -- " + tempo + System.lineSeparator();
 				}
 			}
 			

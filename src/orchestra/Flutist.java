@@ -16,11 +16,11 @@ public class Flutist extends WoodwindInstrumentMusician{
 		for (int i = 0; i<shouldPlay.length; i++ ) {
 			Part part = shouldPlay[i];
 			String tempo = part.getTempo();
-			print +="Part " + i+":";
+			print +="Part " + (i+1) +":";
 			for (Score score : part.getPart()) {
 				print += " " + score.getType();
 			}
-			print += "... " + tempo + System.lineSeparator();
+			print += " -- " + tempo + System.lineSeparator();
 		}
 		return "Flut Playes"+System.lineSeparator()+print;
 	}
