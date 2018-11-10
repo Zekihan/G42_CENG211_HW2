@@ -26,5 +26,10 @@ public class Part {
 		this.part = part;
 		this.size = part.length;
 	}
+
+	@Override
+	public boolean equals(Object arg0) {
+		return super.equals(arg0);
+	}
 	
 }
