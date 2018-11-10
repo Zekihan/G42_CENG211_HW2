@@ -12,24 +12,25 @@ public class Drummer extends PercussionInstrumentMusicians{
 	public String playPiece(Piece piece) {
 		super.playPiece(piece);
 		shouldPlay = super.getPlayed();
-		String print = "Part ";
+		String print = "";
 		for (int i = 0; i<shouldPlay.length; i++ ) {
 			Part part = shouldPlay[i];
-			print += i+":";
 			String tempo =	part.getTempo();
 			if ((tempo.equals("Prestissimo"))||(tempo.equals("Vivace"))||(tempo.equals("Allegretto"))) {
 				for (Score score : part.getPart()) {
+					print +="Part " + i+":";
 					if((score.getType().equals("C"))||(score.getType().equals("D"))||(score.getType().equals("E"))) {
-						print += score.getType();
+						print += " " + score.getType();
 					}
 					else {
-						print += "X";
+						print += " X";
 					}
+					print += "... " + tempo + System.lineSeparator();
 				}
 			}
-			print += "/n";
+			
 		}
-		return print;
+		return "Drum Playes"+System.lineSeparator()+print;
 	}
 
 }

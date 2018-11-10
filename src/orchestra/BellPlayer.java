@@ -12,26 +12,26 @@ public class BellPlayer extends PercussionInstrumentMusicians{
 	public String playPiece(Piece piece) {
 		super.playPiece(piece);
 		shouldPlay = super.getPlayed();
-		String print = "Part ";
+		String print = "";
 		String tempoChange = piece.getTempoChange();
 		if ((tempoChange.equals("Stretto"))) {
 			for (int i = 0; i<shouldPlay.length; i++ ) {
 				Part part = shouldPlay[i];
-				print += i+":";
+				print +="Part " + i+":";
 				String tempo = part.getTempo();
 				if ((tempo.equals("Grave"))) {
 					for (Score score : part.getPart()) {
 						if((score.getType().equals("F"))||(score.getType().equals("G"))||(score.getType().equals("A"))||(score.getType().equals("B"))) {
-							print += score.getType();
+							print += " " + score.getType();
 						}
 						else {
-							print += "X";
+							print += " X";
 						}
 					}
 				}
-				print += "/n";
+				print += "... " + tempo + System.lineSeparator();
 			}
 		}
-		return print;
+		return "Bell Playes"+System.lineSeparator()+print;
 	}
 }

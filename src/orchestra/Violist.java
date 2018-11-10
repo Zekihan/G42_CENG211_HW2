@@ -12,25 +12,27 @@ public class Violist extends StringInstrumentMusician{
 	public String playPiece(Piece piece) {
 		super.playPiece(piece);
 		shouldPlay = super.getPlayed();
-		String print = "Part ";
+		String print = "";
 		String tempoChange = piece.getTempoChange();
 		if ((tempoChange.equals("Ritenuto"))) {
-			print += "1:";
+			print +="Part " + "1"+":";
 			for (Score score : shouldPlay[0].getPart()) {
-				print += score.getType();
+				print += " " + score.getType();
 			}
-			print += "/n";
+			String tempo = shouldPlay[0].getTempo();
+			print += "... " + tempo + System.lineSeparator();
 		}
 		else {
 			for (int i = 0; i<shouldPlay.length; i++ ) {
 				Part part = shouldPlay[i];
-				print += i+":";
+				print +="Part " + i+":";
+				String tempo = part.getTempo();
 				for (Score score : part.getPart()) {
-					print += score.getType();
+					print += " " + score.getType();
 				}
-				print += "/n";
+				print += "... " + tempo + System.lineSeparator();
 			}
 		}
-		return print;
+		return "Viol Playes"+ System.lineSeparator()+print;
 	}
 }
