@@ -17,7 +17,7 @@ public class Concert {
 		String[][] piece3Arr = pieceInput.readPiece("piece3.txt");
 		String[][] piece4Arr = pieceInput.readPiece("piece4.txt");
 		
-		Piece piece1 = createPiece(piece1Arr);
+		Piece piece2 = createPiece(piece2Arr);
 		
 		ArrayList<Musician> musicians = new ArrayList<>();
 		musicians.add(new Violinist());
@@ -29,7 +29,7 @@ public class Concert {
 	
 		//plays piece 1
 		for (Musician musician: musicians) {	
-			System.out.println(musician.playPiece(piece1));
+			System.out.println(musician.playPiece(piece2));
 		}
 	
 	}
