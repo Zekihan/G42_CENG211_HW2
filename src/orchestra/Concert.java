@@ -6,32 +6,40 @@ import fileaccess.FileIn;
 
 public class Concert {
 	
-	Maestro maestro;
+	private Maestro maestro;
+	private ArrayList<Musician> musicians;
 
 	public Concert() {
-		this.maestro = new Maestro();
 		
-		FileIn pieceInput = new FileIn();
-		String[][] piece1Arr = pieceInput.readPiece("piece1.txt");
-		String[][] piece2Arr = pieceInput.readPiece("piece2.txt");
-		String[][] piece3Arr = pieceInput.readPiece("piece3.txt");
-		String[][] piece4Arr = pieceInput.readPiece("piece4.txt");
-		
-		Piece piece2 = createPiece(piece2Arr);
-		
-		ArrayList<Musician> musicians = new ArrayList<>();
+		maestro = new Maestro();
+		musicians = new ArrayList<>();
 		musicians.add(new Violinist());
 		musicians.add(new Celloist());
 		musicians.add(new Violist());
 		musicians.add(new Flutist());
 		musicians.add(new Drummer());
 		musicians.add(new BellPlayer());
+		
+		
+	}
+	public void Start() {	
+		play("piece1.txt");
+		play("piece2.txt");
+		play("piece3.txt");
+		play("piece4.txt");
+	}
 	
-		//plays piece 1
+	
+	private void play(String fileName) {
+		FileIn pieceInput = new FileIn();
+		Piece piece = createPiece(pieceInput.readPiece(fileName));
+		String pieceId = fileName.substring(5,fileName.length()-4);
+		System.out.println("Piece " + pieceId + " is played " + piece.getTempoChange());
 		for (Musician musician: musicians) {	
-			System.out.println(musician.playPiece(piece2));
+			
+			System.out.println(musician.playPiece(piece));
 		}
-	
+		
 	}
 	
 	private Piece createPiece(String[][] piece2dArr) {
